@@ -480,3 +480,99 @@
         }
     }
 }
+
+.master-five {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+
+    &__layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 2.4rem;
+
+        @include mobile-or-tablet-screen {
+            grid-template-columns: minmax(0, 1fr);
+        }
+    }
+
+    &__fields {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.2rem;
+    }
+
+    &__panel {
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+    }
+
+    &__status {
+        padding: 1.2rem 1.6rem;
+        border-radius: 0.8rem;
+        font-size: 1.4rem;
+        font-weight: 700;
+        background: var(--general-section-1);
+
+        &--waiting {
+            border-left: 4px solid #ffad3a;
+        }
+
+        &--trading {
+            border-left: 4px solid var(--button-primary-default);
+        }
+    }
+
+    &__digit--even {
+        background: var(--status-success);
+    }
+
+    &__digit--odd {
+        background: var(--status-danger);
+    }
+
+    &__stats {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0.8rem;
+
+        @include mobile-or-tablet-screen {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            padding: 1rem;
+            border-radius: 0.8rem;
+            background: var(--general-section-1);
+        }
+
+        dt {
+            font-size: 1.2rem;
+            color: var(--text-less-prominent);
+        }
+
+        dd {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-variant-numeric: tabular-nums;
+        }
+    }
+
+    &__positive {
+        color: var(--text-profit-success);
+    }
+
+    &__negative {
+        color: var(--text-loss-danger);
+    }
+
+    &__stop {
+        background: var(--status-danger);
+        color: #fff;
+    }
+}

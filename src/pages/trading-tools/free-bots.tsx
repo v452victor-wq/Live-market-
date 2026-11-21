@@ -4,6 +4,7 @@ import { DBOT_TABS } from '@/constants/bot-contents';
 import { load } from '@/external/bot-skeleton';
 import { save_types } from '@/external/bot-skeleton/constants/save-type';
 import { useStore } from '@/hooks/useStore';
+import MasterFiveBot from './master-five-bot';
 import './trading-tools.scss';
 
 type TFreeBot = { file: string; name: string; description: string; risk: 'Low' | 'Medium' | 'High' };
@@ -140,6 +141,8 @@ const FreeBots = observer(() => {
                     {error}
                 </p>
             )}
+
+            <MasterFiveBot />
 
             <ul className='trading-tools__bots'>
                 {FREE_BOTS.map(bot => (
